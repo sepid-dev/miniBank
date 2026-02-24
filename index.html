@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container my-5" id="container">
+    <form id="formCreate" class="row mt-5 mb-5 align-items-end">
+        <h5>create account</h5>
+        <div class="col-5">
+            <input type="text" id="owner" name="owner" class="form-control p-2" placeholder="nationalCode"/>
+        </div>
+        <div class="col-5">
+            <input type="text" id="balance" name="balance" class="form-control p-2" placeholder="balance"/>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary" id="createAccount" type="submit">create</button>
+        </div>
+    </form>
+    <div class="row justify-content-center" id="alertCreate">
+    </div>
+    <div class="row justify-content-center my-5" id="accountDisplay">
+    </div>
+</div>
+<script src="js/minibank.js" type="module"></script>
+</body>
+</html>

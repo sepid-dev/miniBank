@@ -1,0 +1,91 @@
+
+body {
+    background: linear-gradient(300deg, #8edce7, #b4e1e8);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+#formCreate {
+    background: rgba(255, 255, 255, 0.15)!important;
+    backdrop-filter: blur(12px)!important;
+    border-radius: 10px!important;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.account{
+    background: rgba(255, 255, 255, 0.15)!important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    backdrop-filter: blur(12px)!important;
+    border-radius: 10px!important;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgba(27, 25, 25, 0.75);
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-radius: 10px!important;
+    border: none!important;
+    padding: 10px 15px!important;
+    transition: 0.3s ease!important;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.4)!important;
+    transform: scale(1.02)!important;
+}
+
+/* ========= BUTTON ========= */
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff8041, #eb9378);
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 10px 25px !important;
+    transition: all 0.3s ease !important;
+    font-weight: bold !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.alert {
+    border-radius: 15px !important;
+    font-weight: 500;
+}
+hr{
+    color: white;
+}
+
+h5{
+    font-weight: bold !important;
+    color: rgba(19, 17, 17, 0.58);
+}
+.spanM{
+    margin-right: 30px;
+}
+.spanV{
+    text-decoration: underline!important;
+    text-decoration-color: #ff8041!important;
+    text-decoration-thickness: 2px!important;
+    text-underline-offset: 5px!important;
+}
