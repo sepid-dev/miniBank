@@ -87,12 +87,28 @@ h5{
     /*text-underline-offset: 5px!important;*/
 }
 
-#amount{
-    width: 80%;
-    margin:0 10%;
+.amount{
+    width: 90%;
     border-radius: 5px;
     backdrop-filter: blur(12px)!important;
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     border:none;
     font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.custom-alert {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+}
+
+.custom-alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-alert.hide {
+    opacity: 0;
+    transform: translateY(-10px);
 }

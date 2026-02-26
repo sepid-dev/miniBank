@@ -4,6 +4,7 @@ import {accountList} from './minibank.js'
 
 export class Ui {
     static creatAlert(message, classAlert) {
+        alertCreate.innerHTML = "";
         const div = document.createElement('div');
         div.className = `alert alert-${classAlert} col-md-4 text-center`;
         div.textContent = message;
@@ -17,24 +18,22 @@ export class Ui {
         accountDisplay.innerHTML = "";
         accountList.forEach(i => {
             const div = document.createElement('div');
-            div.className = 'col-md-6 account';
-            div.innerHTML = `<div class="p-3">
+            div.className = 'col-md-5 account';
+            div.setAttribute('data-id',i.id.toString())
+            div.innerHTML = `<div class="p-3" style="display: flex;flex-direction: column;gap:10px">
                 <span class="spanM">account : <span class="spanV">${i.id}</span></span>
                 <span class="spanM">owner: <span class="spanV">${i.owner}</span></span>
-                <span class="spanM">balance : <span class="spanV">${i.balance}</span></span>
+                <span class="spanM">balance : <span class="spanV balance-value">${i.balance}</span></span>
                </div>
-           <form class="my-5 formTransaction">
-            <input class="p-2" type="text" id="amount" placeholder="enter amount">
+           <form class="my-2 p-3">
+            <input class="p-2 amount" placeholder="enter amount" type="number">
             <div class="my-3 flex flex-row">
-            <button  class="btn btn-success withdraw" id="withdraw" type="submit" value="withdraw">withdraw</button>
-            <button  class="btn btn-danger deposit" id="deposit" type="submit" value="deposit">deposit</button>
+            <button  class="btn btn-success withdraw" >withdraw</button>
+            <button  class="btn btn-danger deposit">deposit</button>
             </div>
 </form>`;
             accountDisplay.appendChild(div);
         })
-    }
-
-    static createTransactionDiv() {
     }
 
     static addAccount(account) {
@@ -43,7 +42,6 @@ export class Ui {
         } else {
             accountList.addAccountList(account);
             Ui.createAccountsDiv(accountList.getAccount());
-            Ui.createTransactionDiv();
         }
     }
 
