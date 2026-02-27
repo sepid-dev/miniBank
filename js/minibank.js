@@ -1,7 +1,6 @@
 import {Account} from "./account.js";
 import {Ui} from "./ui.js";
 import {Bank} from "./bank.js";
-
 export const accountList = new Bank();
 const formCreate = document.getElementById('formCreate');
 export const alertCreate = document.getElementById('alertCreate');
@@ -19,7 +18,7 @@ accountDisplay.addEventListener('click', function (e) {
     const card = e.target.closest(".account");
     if (!card) return;
     const id = card.dataset.id;
-    const account = accountList.getAccount().find(acc => acc.id.toString()===id);
+    const account = accountList.getAccount().find(acc => acc.id.toString() === id);
     if (!account) return;
     const amountInput = card.querySelector("input");
     const amount = Number(amountInput.value);
@@ -41,6 +40,7 @@ accountDisplay.addEventListener('click', function (e) {
         }
         amountInput.value = "";
     }
+
     if (actionBtn.classList.contains('deposit')) {
         if (!amountInput.value) {
             Ui.creatAlert("Please enter an amount", 'danger');
@@ -56,10 +56,11 @@ accountDisplay.addEventListener('click', function (e) {
         }
         amountInput.value = "";
     }
+    if (actionBtn.classList.contains('transaction')) {
+        Ui.showTransactions(card, account);
+    }
 });
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    accountList.restoreFromLocalStorage();
-    Ui.createAccountsDiv(accountList.getAccount());
-});
+    document.addEventListener("DOMContentLoaded", function () {
+        accountList.restoreFromLocalStorage();
+        Ui.createAccountsDiv(accountList.getAccount());
+    });

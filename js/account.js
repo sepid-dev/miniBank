@@ -1,8 +1,9 @@
 export class Account {
-    constructor(owner, balance = 0,id=new Date().getTime()) {
+    constructor(owner, balance = 0,id=new Date().getTime(),transaction=[]) {
         this.owner = owner;
         this.balance = balance;
         this.id = id;
+        this.transaction=transaction;
     }
 
     withdraw(amount) {
@@ -14,11 +15,11 @@ export class Account {
         }
 
         this.balance -= amount;
-        // this.transactionList.push({
-        //     type: "withdraw",
-        //     amount,
-        //     date: new Date().toLocaleDateString()
-        // });
+        this.transaction.push({
+            type: "withdraw",
+            amount,
+            date: new Date().toLocaleDateString()
+        });
         return {status: true, balance: this.balance};
     }
 
@@ -27,11 +28,11 @@ export class Account {
             return {status: false, message: "Invalid amount"};
         }
         this.balance += amount;
-        // this.transactionList.push({
-        //     type: "deposit",
-        //     amount,
-        //     date: new Date().toLocaleDateString()
-        // });
+        this.transaction.push({
+            type: "deposit",
+            amount,
+            date: new Date().toLocaleDateString()
+        });
         return {status: true, balance: this.balance};
     }
 }
