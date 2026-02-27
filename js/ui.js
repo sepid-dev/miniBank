@@ -38,7 +38,7 @@ export class Ui {
     }
 
     static addAccount(account) {
-        if (account.owner === "" || isNaN(account.balance)) {
+        if (!account?.owner?.trim() || !account?.balance) {
             Ui.creatAlert("you must fill the fields", 'danger');
         } else {
             accountList.addAccountList(account);
