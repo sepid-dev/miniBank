@@ -196,7 +196,7 @@ https://sepid-dev.github.io/miniBank/
 
 <br>
 📸 Preview 
-![Post Create Preview](image/minibank.PNG)
+![Post Create Preview](image/minibank.png)
 
 ---
 
