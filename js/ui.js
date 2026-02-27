@@ -1,6 +1,6 @@
-import {alertCreate} from './minibank.js';
-import {accountDisplay} from './minibank.js';
-import {accountList} from './minibank.js'
+import {alertCreate} from './main.js';
+import {accountDisplay} from './main.js';
+import {accountList} from './main.js'
 
 export class Ui {
     static creatAlert(message, classAlert) {
